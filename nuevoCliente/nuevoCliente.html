@@ -1,0 +1,33 @@
+<form [ngFormModel]="clientForm" role="form" #f="ngForm"  
+          (ngSubmit)="onSubmit(f.value)">
+	<legend>Nuevo cliente</legend>
+	<div class="form-group col-md-7 col-md-offset-2">
+		<label for="">Nombre</label>
+		<input type="text" class="form-control" ngControl="name" [value]="client.name">
+		<div class="alert alert-danger" *ngIf="name.hasError('required')">
+			El campo nombre es obligatorio.
+		</div>
+		<label for="">Dirección</label>
+		<input type="text" class="form-control" ngControl="address" [value]="client.address">
+		<label for="">Teléfono</label>
+		<input type="text" class="form-control" ngControl="tlf1" [value]="client.tlf1">
+		<div class="alert alert-danger" *ngIf="!tlf1.valid">
+			Error en el formato del teléfono.
+		</div>
+		<label for="">Teléfono 2</label>
+		<input type="text" class="form-control" ngControl="tlf2" [value]='client.tlf2'>
+		<div class="alert alert-danger" *ngIf="!tlf2.valid">
+			Error en el formato del teléfono.
+		</div>
+		<label for="">Email</label>
+		<input type="text" class="form-control" ngControl="email1" [value]='client.email1'>
+		<label for="">Email 2</label>
+		<input type="text" class="form-control" ngControl="email2" [value]='client.email2'>
+		<label for="">DNI/CIF</label>
+		<input type="text" class="form-control" ngControl="cif" [value]='client.cif'>
+		<button class="btn btn-primary" type="submit" [disabled]="!clientForm.valid">Guardar cliente</button>
+		<div class="alert alert-danger" *ngIf="!clientForm.valid">Formulario sin validar</div>
+
+	</div>
+	
+</form>

@@ -1,0 +1,47 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h1 class="panel-title"><h1>Clientes</h1></h1>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group">
+
+    	<h5><a [routerLink]="['/NewClient']">+ Nuevo cliente</a></h5>
+	    
+	    <li class="list-group-item" *ngFor="#client of clientss">
+	    	<div>
+	        	<div class="clickable inline" (click)="setTab(client.id)">
+	        		<h3>
+	        			Nombre: {{ client.name }}
+	        			<span class="glyphicon glyphicon-chevron-up pull-right" aria-hidden="true" *ngIf="client.id==tab"></span>
+	        			<span class="glyphicon glyphicon-chevron-down pull-right" aria-hidden="true" *ngIf="client.id!=tab"></span>
+	        		</h3>
+	        	</div>
+	        	<div class="pull-right" *ngIf="client.id==tab">
+	        		<span><button class="btn btn-warning" (click)="goUpdate(client.id)">Editar</button></span>
+	        		<span><button class="btn btn-danger" (click)="deleteClient(client.id)">Borrar</button></span>
+	        	</div>
+	        	
+	    	</div>
+	        <div *ngIf="client.id==tab">
+	        	<p>Dirección: {{ client.address }}</p>
+	        	<p>Tlf: {{client.tlf1}} </p>
+		        <p *ngIf="client.tlf2">Tlf 2: {{client.tlf2}} </p>
+		        <p>Email: {{client.email1}}</p>
+		        <p *ngIf="client.email2">Email 2: {{client.email2}} </p>
+	        	
+	        	<div class="list-group-item" *ngIf="client.works">
+	        		<h4>Obras:</h4>
+		        	<div *ngFor="#work of client.works">
+		        		{{ work.date }} en {{ work.name }}
+					</div>
+					<h5><a [routerLink]="['NuevoCliente']">+ Nueva obra</a></h5>
+	        	</div>
+	        	<client-visits [client]="client.id"></client-visits>
+	        	<client-budgets [client]="client.id"></client-budgets>
+	        	<attachments [idsth]="client.id" type="clients"></attachments>
+	        </div>
+	    </li>
+	</ul>
+  </div>
+</div>
+   
