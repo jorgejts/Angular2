@@ -1,4 +1,4 @@
-System.register(["angular2/core", "../../providers/dataApi/dataApi", "angular2/http", "angular2/router", "../attachments/attachments/attachments", "./clientVisits/clientVisits", "./clientBudgets/clientBudgets"], function(exports_1) {
+System.register(["angular2/core", "../../../providers/dataApi/dataApi", "angular2/http", "angular2/router", "../../attachments/attachments/attachments", "../clientVisits/clientVisits", "../clientBudgets/clientBudgets"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77,7 +77,7 @@ System.register(["angular2/core", "../../providers/dataApi/dataApi", "angular2/h
                 ClientsPage = __decorate([
                     core_1.Component({
                         selector: "clients",
-                        templateUrl: "app/components/clients/clients.html",
+                        templateUrl: "app/components/clients/clients/clients.html",
                         providers: [dataApi_1.DataApi, http_1.HTTP_PROVIDERS],
                         directives: [router_1.RouterLink, router_1.ROUTER_DIRECTIVES, attachments_1.AttachmentsPage, clientVisits_1.ClientsVisitsPage, clientBudgets_1.ClientsBudgetsPage],
                     }), 

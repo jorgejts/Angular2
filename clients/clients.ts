@@ -1,15 +1,15 @@
 import {Component} from "angular2/core";
-import {DataApi} from "../../providers/dataApi/dataApi";
+import {DataApi} from "../../../providers/dataApi/dataApi";
 import {HTTP_PROVIDERS} from "angular2/http";
 import {RouterLink,RouteParams,ROUTER_DIRECTIVES,Router} from "angular2/router";
-import {NuevoClientePage} from "./nuevoCliente/nuevoCliente";
-import {AttachmentsPage} from "../attachments/attachments/attachments";
-import {ClientsVisitsPage} from "./clientVisits/clientVisits";
-import {ClientsBudgetsPage} from "./clientBudgets/clientBudgets";
+import {NuevoClientePage} from "../nuevoCliente/nuevoCliente";
+import {AttachmentsPage} from "../../attachments/attachments/attachments";
+import {ClientsVisitsPage} from "../clientVisits/clientVisits";
+import {ClientsBudgetsPage} from "../clientBudgets/clientBudgets";
 
 @Component({
 	selector: "clients",
-	templateUrl: "app/components/clients/clients.html",
+	templateUrl: "app/components/clients/clients/clients.html",
 	providers: [DataApi, HTTP_PROVIDERS],
 	directives: [RouterLink, ROUTER_DIRECTIVES, AttachmentsPage, ClientsVisitsPage,ClientsBudgetsPage],
 })
